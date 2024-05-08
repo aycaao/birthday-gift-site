@@ -112,6 +112,26 @@ a {
     background-image: url("images/cheers.gif");
 }
 
+/* Add this at the end of your style.css */
+#preloader {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+
+#preloader::after {
+    content: "";
+    display: block;
+    background: url("images/happy.gif"), 
+                url("images/hot.gif"), 
+                url("images/genius.gif"), 
+                url("https://media.giphy.com/media/3o6Mbjd61ZQMHoNg4M/giphy.gif"), 
+                url("images/cheers.gif");
+}
+
 
 /* 
 Add the footer paragraph according to the design. 
