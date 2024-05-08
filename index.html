@@ -42,4 +42,27 @@
         <p id="footer">Want to create your own Birthday GIFt site? Take <a href="https://scrimba.com/learn/htmlandcss" target="_blank">this HTML & CSS course.</a></p>
         
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var isTouchDevice = ('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
+    
+            if (isTouchDevice) {
+                var giftImages = document.querySelectorAll('.gift-img');
+                giftImages.forEach(function (img) {
+                    img.addEventListener('click', function () {
+                        // Toggle the 'tap' class to show/hide the image
+                        if (img.classList.contains('tap')) {
+                            img.classList.remove('tap');
+                        } else {
+                            // Ensure only one gift image can be "tapped" at a time
+                            giftImages.forEach(function (i) {
+                                i.classList.remove('tap');
+                            });
+                            img.classList.add('tap');
+                        }
+                    });
+                });
+            }
+        });
+    </script>    
 </html>
